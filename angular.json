@@ -6,12 +6,8 @@
     "e-commerce": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
-        }
+        "@schematics/angular:component": { "style": "scss" },
+        "@schematics/angular:application": { "strict": true }
       },
       "root": "",
       "sourceRoot": "src",
@@ -26,13 +22,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -71,20 +62,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "browserTarget": "e-commerce:build:production"
-            },
-            "development": {
-              "browserTarget": "e-commerce:build:development"
-            }
+            "production": { "browserTarget": "e-commerce:build:production" },
+            "development": { "browserTarget": "e-commerce:build:development" }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "e-commerce:build"
-          }
+          "options": { "browserTarget": "e-commerce:build" }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -94,14 +79,25 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
+          }
+        }
+      }
+    },
+    "header": {
+      "projectType": "library",
+      "root": "projects/header",
+      "sourceRoot": "projects/header/src",
+      "prefix": "lib",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/header"],
+          "options": {
+            "jestConfig": "projects/header/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
