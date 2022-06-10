@@ -1,1 +1,9 @@
-
+<div *ngIf="topImages$ | async as image" class="relative">
+  <img [src]="image.imageUrl" [alt]="image.alt" />
+  <div class="absolute bottom-0 left-0 text-white pb-5 pl-3">
+    <p class="text-lg font-extralight uppercase tracking-wide">
+      New collection
+    </p>
+    <p class="text-6xl font-bold tracking-wide">{{ image.collection }}</p>
+  </div>
+</div>
