@@ -7,9 +7,10 @@ import {
 import { Observable } from 'rxjs';
 import { TopImageDTO } from '../../../application/ports/secondary/dto/top-image.dto';
 import {
-  GETS_ONE_TOP_IMAGE_DTO,
-  GetsOneTopImageDtoPort,
-} from '../../../application/ports/secondary/dto/gets-one-top-image.dto-port';
+  GetsAllTopImageDtoPort,
+  GETS_ALL_TOP_IMAGE_DTO,
+} from '../../../application/ports/secondary/dto/gets-all-top-image.dto-port';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'lib-top-image',
@@ -18,12 +19,33 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopImageComponent {
-  topImages$: Observable<TopImageDTO> = this._getsOneTopImageDto.getOne(
-    'ujWnPve5VMTdNyB7ulKj'
-  );
+  images$: Observable<TopImageDTO[]> = this._getsAllTopImageDto.getAll();
 
   constructor(
-    @Inject(GETS_ONE_TOP_IMAGE_DTO)
-    private _getsOneTopImageDto: GetsOneTopImageDtoPort
+    @Inject(GETS_ALL_TOP_IMAGE_DTO)
+    private _getsAllTopImageDto: GetsAllTopImageDtoPort
   ) {}
+
+  // Gdzie najlepiej to przeniesc?
+  customOptions: OwlOptions = {
+    loop: true,
+    dots: false,
+    autoplay: true,
+    margin: 0,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 1,
+      },
+      760: {
+        items: 2,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+    nav: false,
+  };
 }
