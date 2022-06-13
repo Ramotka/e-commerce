@@ -3,4 +3,11 @@
 @import "tailwindcss/components.css";
 @import "tailwindcss/utilities.css";
 
+// assets/animations
+@import "src/assets/scss/animations.scss";
+
+body {
+    font-family: 'Spartan', sans-serif;
+}
+
 
