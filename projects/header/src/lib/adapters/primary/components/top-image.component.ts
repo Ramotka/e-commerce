@@ -31,7 +31,8 @@ export class TopImageComponent {
     loop: true,
     dots: false,
     autoplay: true,
-    margin: 0,
+    mouseDrag: false,
+    touchDrag: false,
     responsive: {
       0: {
         items: 1,
