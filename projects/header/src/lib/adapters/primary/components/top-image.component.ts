@@ -4,13 +4,13 @@ import {
   Inject,
   ViewEncapsulation,
 } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TopImageDTO } from '../../../application/ports/secondary/dto/top-image.dto';
+import { map, Observable } from 'rxjs';
 import {
   GetsAllTopImageDtoPort,
   GETS_ALL_TOP_IMAGE_DTO,
 } from '../../../application/ports/secondary/dto/gets-all-top-image.dto-port';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { HeaderQuery } from '../../../application/ports/primary/query/header.query';
 
 @Component({
   selector: 'lib-top-image',
@@ -19,7 +19,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopImageComponent {
-  images$: Observable<TopImageDTO[]> = this._getsAllTopImageDto.getAll();
+  topImageQuery$: Observable<HeaderQuery> = this._getsAllTopImageDto
+    .getAll()
+    .pipe(map((topImageDtos) => new HeaderQuery(topImageDtos)));
 
   constructor(
     @Inject(GETS_ALL_TOP_IMAGE_DTO)

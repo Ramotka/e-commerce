@@ -1,13 +1,16 @@
-<owl-carousel-o [options]="customOptions">
-  <ng-container *ngFor="let img of images$ | async">
+<owl-carousel-o
+  [options]="customOptions"
+  *ngIf="topImageQuery$ | async as topImageQuery"
+>
+  <ng-container *ngFor="let item of topImageQuery.images">
     <ng-template carouselSlide class="relative">
-      <img [src]="img.imageUrl" [alt]="img.alt" />
+      <img [src]="item.image" [alt]="item.alt" />
       <div class="absolute bottom-0 left-0 text-white pb-5 pl-3">
         <p class="text-lg font-extralight uppercase tracking-wide fade-in">
           New collection
         </p>
         <p class="text-6xl font-bold tracking-wide slide-up">
-          {{ img.collection }}
+          {{ item.text }}
         </p>
       </div>
     </ng-template>
