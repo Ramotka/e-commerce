@@ -1,0 +1,13 @@
+<div class="flex flex-col bg-lime-800 opacity-75">
+  <p class="m-auto text-2xl mt-5 py-5 font-thin tracking-wide text-white">
+    Discover our <span class="text-amber-400">new</span> collections:
+  </p>
+  <ul *ngIf="collections$ | async as collections" class="flex justify-evenly">
+    <li
+      *ngFor="let item of collections"
+      class="text-white hover:text-amber-400 hover:scale-125 hover:cursor-pointer text-lg font-extrabold uppercase tracking-wide pb-5 mb-5"
+    >
+      {{ item.collection }}
+    </li>
+  </ul>
+</div>

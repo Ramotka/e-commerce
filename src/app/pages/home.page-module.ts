@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import {
   FirebaseTopImagesServiceModule,
   TopImageComponentModule,
+  DiscoverCollectionsComponentModule,
 } from '@header';
 import { HomePage } from './home.page';
 
@@ -18,6 +19,7 @@ import { HomePage } from './home.page';
     ]),
     TopImageComponentModule,
     FirebaseTopImagesServiceModule,
+    DiscoverCollectionsComponentModule,
   ],
   declarations: [HomePage],
   providers: [],
