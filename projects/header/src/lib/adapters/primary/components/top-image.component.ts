@@ -28,7 +28,7 @@ export class TopImageComponent {
     private _getsAllTopImageDto: GetsAllTopImageDtoPort
   ) {}
 
-  // Gdzie najlepiej to przeniesc?
+  // Gdzie najlepiej to przeniesc? Prezentacyjny komponent
   customOptions: OwlOptions = {
     loop: true,
     dots: false,

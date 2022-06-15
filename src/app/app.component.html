@@ -1,4 +1,4 @@
-<div class="flex justify-between items-center w-100 bg-amber-400">
+<div class="flex justify-between items-center w-100 bg-amber-400" id="navbar">
   <div class="flex justify-between items-center">
     <div class="p-3 md:hidden">
       <svg
@@ -28,7 +28,9 @@
         </g>
       </svg>
     </div>
-    <div class="text-white py-2 md:p-3 text-2xl tracking-wider">Ramotka</div>
+    <a class="text-white py-2 md:p-3 text-2xl tracking-wider" href="#navbar"
+      >Ramotka</a
+    >
   </div>
   <div>
     <svg
@@ -64,6 +66,5 @@
     </svg>
   </div>
 </div>
-<div class="static">
-  <router-outlet></router-outlet>
-</div>
+
+<router-outlet></router-outlet>
