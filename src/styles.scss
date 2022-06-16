@@ -6,8 +6,9 @@
 // assets/animations
 @import "src/assets/scss/animations.scss";
 
+// assets/applications/ @apply
+@import "src/assets/scss/applications.scss";
+
 body {
     font-family: 'Spartan', sans-serif;
 }
-
-
