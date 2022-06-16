@@ -3,4 +3,5 @@ export interface TopImageDTO {
   readonly imageUrl: string;
   readonly alt: string;
   readonly collection: string;
+  readonly showImage: boolean;
 }

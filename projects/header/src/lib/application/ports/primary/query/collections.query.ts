@@ -1,3 +1,3 @@
 export class CollectionsQuery {
-  constructor(public readonly text: string) {}
+  constructor(public readonly tile: string) {}
 }

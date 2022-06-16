@@ -2,7 +2,8 @@ export class TopImageQuery {
   constructor(
     public readonly image: string,
     public readonly alt: string,
-    public readonly text: string
+    public readonly text: string,
+    public readonly showImage: boolean
   ) {}
 }
 
