@@ -1,9 +1,11 @@
 import { InjectionToken } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductDTO } from './product.dto';
+import { AddProductCommand } from '../../primary/command/add-product.command';
 
-export const ADDS_PRODUCT_DTO = new InjectionToken<AddsProductDtoPort>('ADDS_PRODUCT_DTO');
+export const ADDS_PRODUCT_DTO = new InjectionToken<AddsProductDtoPort>(
+  'ADDS_PRODUCT_DTO'
+);
 
 export interface AddsProductDtoPort {
-  add(product: Partial<ProductDTO>): Observable<void>;
+  add(command: AddProductCommand): Observable<void>;
 }
