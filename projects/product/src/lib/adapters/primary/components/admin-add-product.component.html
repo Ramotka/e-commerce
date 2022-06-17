@@ -1,30 +1,32 @@
 <form
   [formGroup]="addProduct"
-  class="flex flex-col my-5"
+  class="flex flex-col my-5 items-center"
   (ngSubmit)="onAddProductSubmited(addProduct)"
 >
-  <mat-form-field appearance="fill" class="m-auto w-80">
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Name</mat-label>
     <input matInput formControlName="name" />
   </mat-form-field>
-  <mat-form-field appearance="fill" class="m-auto w-80">
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Image</mat-label>
     <input matInput formControlName="imageUrl" />
   </mat-form-field>
-  <mat-form-field appearance="fill" class="m-auto w-80">
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Price</mat-label>
     <input matInput formControlName="price" />
   </mat-form-field>
-  <mat-form-field appearance="fill" class="m-auto w-80">
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Currency</mat-label>
     <mat-select formControlName="currency">
       <mat-option value="PLN">PLN</mat-option>
       <mat-option value="EUR">EUR</mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field appearance="fill" class="m-auto w-80">
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Description</mat-label>
     <textarea matInput formControlName="description"></textarea>
   </mat-form-field>
-  <input type="submit" value="Submit" />
+  <button type="submit" mat-raised-button color="accent" class="w-min">
+    Accent
+  </button>
 </form>
