@@ -1,8 +1,7 @@
-<lib-carousel
-  *ngIf="topImageQuery$ | async as topImageQuery"
-  [data]="topImageQuery.images"
->
-  <!-- <ng-container *ngFor="let item of topImageQuery.images">
+<owl-carousel-o [options]="customOptions">
+  <!-- <ng-content></ng-content> -->
+
+  <ng-container *ngFor="let item of data">
     <ng-template carouselSlide class="relative">
       <img [src]="item.image" [alt]="item.alt" />
       <div class="absolute bottom-0 left-0 text-white pb-5 pl-3">
@@ -14,5 +13,5 @@
         </p>
       </div>
     </ng-template>
-  </ng-container> -->
-</lib-carousel>
+  </ng-container>
+</owl-carousel-o>

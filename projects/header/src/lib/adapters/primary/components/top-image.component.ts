@@ -29,26 +29,4 @@ export class TopImageComponent {
   ) {}
 
   // Gdzie najlepiej to przeniesc? Prezentacyjny komponent
-  customOptions: OwlOptions = {
-    loop: true,
-    dots: false,
-    autoplay: true,
-    mouseDrag: false,
-    touchDrag: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 1,
-      },
-      760: {
-        items: 2,
-      },
-      1000: {
-        items: 3,
-      },
-    },
-    nav: false,
-  };
 }
