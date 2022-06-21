@@ -23,6 +23,15 @@
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill" class="w-80">
+    <mat-label>Collection</mat-label>
+    <mat-select formControlName="collection">
+      <mat-option value="shirts">Shirts</mat-option>
+      <mat-option value="shoes">Shoes</mat-option>
+      <mat-option value="dresses">Dresses</mat-option>
+      <mat-option value="jeans">Jeans</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="w-80">
     <mat-label>Description</mat-label>
     <textarea matInput formControlName="description"></textarea>
   </mat-form-field>

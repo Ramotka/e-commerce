@@ -4,6 +4,7 @@ export class AddProductCommand {
     readonly description: string,
     readonly price: number,
     readonly currency: number,
-    readonly imageUrl: string
+    readonly imageUrl: string,
+    readonly collection: string
   ) {}
 }

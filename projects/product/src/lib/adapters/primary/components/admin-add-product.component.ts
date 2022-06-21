@@ -23,6 +23,7 @@ export class AdminAddProductComponent {
     imageUrl: new FormControl(),
     price: new FormControl(),
     currency: new FormControl(),
+    collection: new FormControl(),
   });
 
   constructor(
@@ -30,6 +31,9 @@ export class AdminAddProductComponent {
   ) {}
 
   onAddProductSubmited(addProduct: FormGroup): void {
+    if (addProduct.invalid) {
+      return;
+    }
     this._addsProductDto
       .add({
         name: addProduct.get('name')?.value,
@@ -37,6 +41,7 @@ export class AdminAddProductComponent {
         imageUrl: addProduct.get('imageUrl')?.value,
         price: addProduct.get('price')?.value,
         currency: addProduct.get('currency')?.value,
+        collection: addProduct.get('collection')?.value,
       })
       .subscribe();
     addProduct.reset();
