@@ -27,6 +27,4 @@ export class TopImageComponent {
     @Inject(GETS_ALL_TOP_IMAGE_DTO)
     private _getsAllTopImageDto: GetsAllTopImageDtoPort
   ) {}
-
-  // Gdzie najlepiej to przeniesc? Prezentacyjny komponent
 }
