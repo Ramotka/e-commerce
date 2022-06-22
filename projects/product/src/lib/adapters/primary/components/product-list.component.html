@@ -1,1 +1,10 @@
 <!-- <ul><li *ngFor="let item of productList$ | async">{{ item | json }}</li></ul> -->
+STORAGE:
+<div *ngIf="productsInStorage$ | async as storage">
+  {{ storage | json }}
+</div>
+
+GetAll:
+<ul>
+  <li *ngFor="let product of productList$ | async">{{ product | json }}</li>
+</ul>

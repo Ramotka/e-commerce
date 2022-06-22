@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import {
-  FirebaseTopImagesServiceModule,
-  TopImageComponentModule,
-  DiscoverCollectionsComponentModule,
-} from '@header';
+import { DiscoverCollectionsComponentModule, FirebaseTopImagesServiceModule, TopImageComponentModule } from '@header';
+import { FirebaseProductServiceModule, InMemoryProductsStorageModule, ProductListComponentModule } from '@product';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -20,6 +17,9 @@ import { HomePage } from './home.page';
     TopImageComponentModule,
     FirebaseTopImagesServiceModule,
     DiscoverCollectionsComponentModule,
+    ProductListComponentModule,
+    FirebaseProductServiceModule,
+    InMemoryProductsStorageModule
   ],
   declarations: [HomePage],
   providers: [],
