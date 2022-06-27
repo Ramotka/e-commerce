@@ -1,6 +1,6 @@
 <!-- <ul><li *ngFor="let item of productList$ | async">{{ item | json }}</li></ul> -->
 STORAGE:
-<div *ngIf="productsInStorage$ | async as storage">
+<div *ngIf="cos$ | async as storage">
   {{ storage | json }}
 </div>
 

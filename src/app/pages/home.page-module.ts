@@ -1,8 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { DiscoverCollectionsComponentModule, FirebaseTopImagesServiceModule, TopImageComponentModule } from '@header';
-import { FirebaseProductServiceModule, InMemoryProductsStorageModule, ProductListComponentModule } from '@product';
+import {
+  DiscoverCollectionsComponentModule,
+  FirebaseTopImagesServiceModule,
+  TopImageComponentModule,
+} from '@header';
+import {
+  FirebaseProductServiceModule,
+  InMemoryProductsStorageModule,
+  LoadProductsResolver,
+  LoadProductsResolverModule,
+  ProductListComponentModule,
+  ProductsStateModule,
+} from '@product';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -11,6 +22,7 @@ import { HomePage } from './home.page';
     RouterModule.forChild([
       {
         path: '',
+        resolve: [LoadProductsResolver],
         component: HomePage,
       },
     ]),
@@ -19,7 +31,9 @@ import { HomePage } from './home.page';
     DiscoverCollectionsComponentModule,
     ProductListComponentModule,
     FirebaseProductServiceModule,
-    InMemoryProductsStorageModule
+    InMemoryProductsStorageModule,
+    ProductsStateModule,
+    LoadProductsResolverModule,
   ],
   declarations: [HomePage],
   providers: [],
