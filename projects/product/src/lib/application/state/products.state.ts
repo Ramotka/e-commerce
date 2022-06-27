@@ -18,6 +18,7 @@ import {
 import { LoadProductsCommand } from '../ports/primary/command/load-products.command';
 import { ProductListQuery } from '../ports/primary/query/product-list.query';
 import { ProductContext } from '../ports/secondary/context/product.context';
+import { mapFromProductContext } from './product-list-query.mapper';
 
 @Injectable()
 export class ProductsState
@@ -44,15 +45,6 @@ export class ProductsState
   getCurrentProductListQuery(): Observable<ProductListQuery> {
     return this._selectsProductContext
       .select()
-      .pipe(
-        map(
-          (productContext: Partial<ProductContext>): ProductListQuery =>
-            new ProductListQuery(
-              (productContext.all || []).map(
-                (product) => product.price.toString()
-              )
-            )
-        )
-      );
+      .pipe(map((ctx) => mapFromProductContext(ctx)));
   }
 }
