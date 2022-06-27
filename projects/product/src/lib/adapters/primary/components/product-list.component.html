@@ -1,10 +1,9 @@
-<!-- <ul><li *ngFor="let item of productList$ | async">{{ item | json }}</li></ul> -->
 STORAGE:
-<div *ngIf="cos$ | async as storage">
-  {{ storage | json }}
-</div>
+<ul *ngIf="productListFromQuery$ | async as storage">
+  <li *ngFor="let product of storage.items">{{ product }}</li>
+</ul>
 
 GetAll:
 <ul>
-  <li *ngFor="let product of productList$ | async">{{ product | json }}</li>
+  <li *ngFor="let prod of productList$ | async">{{ prod | json }}</li>
 </ul>

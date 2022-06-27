@@ -34,7 +34,8 @@ import { LoadProductsCommand } from '../../../application/ports/primary/command/
 })
 export class ProductListComponent {
   productList$: Observable<ProductDTO[]> = this._getsAllProductDto.getAll();
-  cos$: Observable<ProductListQuery> =
+
+  productListFromQuery$: Observable<ProductListQuery> =
     this._getsCurrentProductListQuery.getCurrentProductListQuery();
 
   constructor(
