@@ -33,8 +33,6 @@ import { LoadProductsCommand } from '../../../application/ports/primary/command/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
-  productList$: Observable<ProductDTO[]> = this._getsAllProductDto.getAll();
-
   productListFromQuery$: Observable<ProductListQuery> =
     this._getsCurrentProductListQuery.getCurrentProductListQuery();
 

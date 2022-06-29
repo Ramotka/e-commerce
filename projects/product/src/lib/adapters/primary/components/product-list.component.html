@@ -1,9 +1,3 @@
-STORAGE:
-<ul *ngIf="productListFromQuery$ | async as storage">
+<ul *ngIf="productListFromQuery$ | async as storage" class="my-5">
   <li *ngFor="let product of storage.items">{{ product }}</li>
-</ul>
-
-GetAll:
-<ul>
-  <li *ngFor="let prod of productList$ | async">{{ prod | json }}</li>
 </ul>
